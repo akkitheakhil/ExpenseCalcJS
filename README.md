@@ -23,7 +23,6 @@ Checkout the GH Page to play with the app. https://akkitheakhil.github.io/Expens
 ![Mobile](https://i.ibb.co/Qmz55sM/Mobile-Dashboard.png "Mobile Dashboard View")
 
 
-
 ### Built With
 
 * [HTML5](https://en.wikipedia.org/wiki/HTML)
@@ -42,7 +41,6 @@ To get a local copy up and running follow these simple example steps.
 
 ### Prerequisites
 
-This is an example of how to list things you need to use the software and how to install them.
 * npm
   ```sh
   npm install npm@latest -g
