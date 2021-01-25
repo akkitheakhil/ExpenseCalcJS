@@ -31,7 +31,7 @@ It make use of Vanilla JavaScript to build this small app.
 For Development :
 
 * [Express](https://expressjs.com/)
-* [Express](https://nodemon.io/)
+* [Nodemon](https://nodemon.io/)
 
 <!-- GETTING STARTED -->
 ## Getting Started
