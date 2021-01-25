@@ -17,8 +17,8 @@ It make use of Vanilla JavaScript to build this small app.
 
 * Screenshots
 
-![Desktop Image](https://i.ibb.co/RQk9JTD/Desktop-Screenshot-Dashboard.png "Desktop Dashboard View")
-![Mobile Image](https://i.ibb.co/DLByHHv/Phone-Screenshot-Dashboar.png "Mobile Dashboard View")
+![Desktop](https://i.ibb.co/jT9SZkf/Desktop-Dashboard.png "Desktop Dashboard View")
+![Mobile](https://i.ibb.co/Qmz55sM/Mobile-Dashboard.png "Mobile Dashboard View")
 
 
 
