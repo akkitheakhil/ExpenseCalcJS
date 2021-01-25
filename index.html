@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Expense Calc | Dashboard</title>
+    <link rel="stylesheet" href="./static/styles/styles.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" integrity="sha512-HK5fgLBL+xu6dm/Ii3z4xhlSUyZgTT9tuc/hSrtw6uzJOvgRr2a9jyxxT1ely+B+xFAmJKVSTbpM/CuL7qxO8w==" crossorigin="anonymous" />
+</head>
+<body>
+
+    <div class="dashboard">
+        <div class="status">
+            <h1>Dashboard</h1>
+
+            <div class="balance">
+                <p>Balance</p>
+                <span class="balance-text"></span>
+            </div>
+
+            <div class="budget-data">
+                <div class="income">
+                    <p>Income</p>
+                    <p class="income-amount"></p>
+                </div>
+
+                <div class="expense">
+                    <p>Expense</p>
+                    <p class="expense-amount"></p>
+                </div>
+               
+
+            </div>
+  
+
+        </div>
+        <div class="main">
+
+            <div class="tabs">
+                <h3 class="active" id="income-tab">Income</h3>
+                <h3 id="expense-tab">Expense</h3>
+                <h3 id="all-tab">All</h3>
+            </div>
+
+            <div class="budget-list">
+                <ul class="lists">
+                    <!-- <li class="list">
+                        <span class="amt-text">
+                            Salary: $3000
+                        </span>
+                    <button class="edit-btn">
+                        <i class="fas fa-edit"></i>
+                    </button>
+                    <button class="trash-btn">
+                        <i class="fas fa-trash"></i>
+                    </button>
+                    </li> -->
+                </ul>
+            </div>
+
+
+            <div class="bottom-bar">
+                <form>
+                    <input type="text" name="name" id="input-name" placeholder="Item" autocomplete="off">
+                    <input type="number" name="amount" id="input-amount" placeholder="Amount" autocomplete="off">
+                    <button class="add" id="add-btn">
+                        <i class="fas fa-plus-square"></i>
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
+ 
+
+    
+    <script type="module" src="./static/app.js"></script>
+</body>
+</html>

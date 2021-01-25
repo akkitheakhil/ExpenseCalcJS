@@ -1,0 +1,216 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Oswald", sans-serif;
+  height: 100vh;
+  width: 100%;
+  color: white;
+}
+
+h1{
+    color: white;
+}
+
+.dashboard {
+  height: 100%;
+  background-image: linear-gradient(to right top, #fd9644, #fa8231);
+  display: flex;
+  flex-direction: column;
+}
+
+.status {
+    flex: 1;
+    padding: 2rem 1rem;
+}
+
+.balance{
+    margin: .5em 0;
+}
+
+.balance-text{
+    font-size: 3rem;
+}
+
+.budget-data{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.main {
+    height: 65%;
+  background: linear-gradient(
+    to right bottom,
+    rgba(255, 255, 255, 0.7),
+    rgba(255, 255, 255, 0.3)
+  );
+  border-top-left-radius: 2rem;
+  border-top-right-radius: 2rem;
+  z-index: 2;
+  backdrop-filter: blur(2rem);
+  display: flex; 
+  flex-direction: column;  
+}
+
+.income-amount {
+  font-size: 1.4rem;
+}
+
+.expense-amount {
+  font-size: 1.4rem;
+}
+
+.tabs{
+    margin: 0.5em 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    color: #2f3640;
+}
+
+.tabs h3{
+    opacity: .6;
+    cursor: pointer;
+    outline: none;
+}
+
+.active {
+    opacity: 1 !important;
+}
+
+.budget-list{
+    overflow-y: scroll !important;
+    flex: 1;
+    width: 50%;
+    align-self: center;
+}
+::-webkit-scrollbar {
+    width: 0px;  /* Remove scrollbar space */
+    background: transparent;  /* Optional: just make scrollbar invisible */
+}
+/* Optional: show position indicator in red */
+::-webkit-scrollbar-thumb {
+    background: #FF0000;
+}
+
+.lists{
+   margin: .5em 1em;
+   text-decoration: none;
+   list-style: none;
+}
+
+.list {
+    margin: .5em 0;
+    background-image: linear-gradient(to right top, rgba(253, 150, 68, .3),rgba(250, 130, 49, .6));
+    border-radius: .5rem;
+    padding: .5rem;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.amt-text{
+    flex: 1;
+    font-size: 1.5rem;
+}
+
+.trash-btn,
+.edit-btn {
+  background: #ff6f47;
+  color: white;
+  border: none;
+  padding: 1rem;
+  margin: 0 .3em;
+  cursor: pointer;
+  font-size: 1rem;
+}
+
+.fa-trash,
+.fa-edit {
+  pointer-events: none;
+}
+
+.bottom-bar {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: .5em;
+}
+
+.hide {
+  display: none;
+}
+
+.show {
+  display: flex;
+}
+
+.fall {
+  transition: top ease 0.5s;
+  transform: translateY(4rem) rotateZ(20deg);
+  opacity: 0;
+}
+
+.expense {
+  color: #2c3e50;
+}
+
+form {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+  }
+
+  form input,
+  form button {
+    margin: 0 .5rem;
+    padding: 0.5rem;
+    flex: 1;
+    font-size: 2em;
+    border: none;
+    background: rgba(255,255,255, .7);
+    color: #2f3640;
+    
+  }
+
+  form input:focus {
+      outline: none;
+  }
+
+  form button {
+    color:  #f7fffe;
+    background: #ff6f47;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+  form button:hover {
+    background: #ff6f47;
+    color: white;
+  }
+
+  @media only screen and (max-width: 748px) {
+
+    .budget-list{
+      width: 100%;
+      align-self: center;
+     }
+
+    form {
+        flex-direction: column;
+        width: 100%;
+        margin: 1em;
+    }
+
+    form input,
+    form button {
+        font-size: 12px;
+        width: 100%;
+        margin: .5em .5em;
+    }
+  }
