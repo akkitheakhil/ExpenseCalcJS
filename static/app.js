@@ -40,7 +40,7 @@ function addItem(amount, title, type = null) {
         newItem.classList.add("list");
         const newTextSpan = document.createElement("span");
         newTextSpan.classList.add("amt-text");
-        newTextSpan.innerHTML = `${title} : ${amount}`;
+        newTextSpan.innerHTML = `${title} : $${amount}`;
         newItem.appendChild(newTextSpan);
 
         if (currentTab === 'income' || currentTab === 'expense') {
@@ -145,10 +145,10 @@ function removeItem(e) {
         const itemToRemove = listItemElem.children[0].innerText;
         listItemElem.classList.add("fall")
         if (currentTab === 'income') {
-            let elementIndex = incomeArr.findIndex(item => itemToRemove === `${item.title} : ${item.amount}`);
+            let elementIndex = incomeArr.findIndex(item => itemToRemove === `${item.title} : $${item.amount}`);
             incomeArr.splice(incomeArr.indexOf(elementIndex), 1);
         } else if (currentTab === 'expense') {
-            let elementIndex = expenseArr.findIndex(item => itemToRemove === `${item.title} : ${item.amount}`);
+            let elementIndex = expenseArr.findIndex(item => itemToRemove === `${item.title} : $${item.amount}`);
             expenseArr.splice(incomeArr.indexOf(elementIndex), 1);
         }
         listItemElem.remove();
@@ -166,7 +166,7 @@ function editItem(e) {
         const itemToRemove = listItemElem.children[0].innerText;
 
         if (currentTab === 'income') {
-            let elementIndex = incomeArr.findIndex(item => itemToRemove === `${item.title} : ${item.amount}`);
+            let elementIndex = incomeArr.findIndex(item => itemToRemove === `${item.title} : $${item.amount}`);
 
             inputAmt.value = incomeArr[elementIndex].amount;
             inputTitle.value = incomeArr[elementIndex].title;
@@ -174,7 +174,7 @@ function editItem(e) {
             incomeArr.splice(incomeArr.indexOf(elementIndex), 1);
 
         } else if (currentTab === 'expense') {
-            let elementIndex = expenseArr.findIndex(item => itemToRemove === `${item.title} : ${item.amount}`);
+            let elementIndex = expenseArr.findIndex(item => itemToRemove === `${item.title} : $${item.amount}`);
 
             inputAmt.value = expenseArr[elementIndex].amount;
             inputTitle.value = expenseArr[elementIndex].title;
@@ -197,9 +197,9 @@ function calculations() {
         expenseCal = expenseArr.map(item => item.amount).reduce((prev, next) => prev + next);
     }
 
-    incomeAmount.innerText = incomeCal;
-    expenseAmount.innerText = expenseCal;
-    balanceText.innerText = incomeCal - expenseCal;
+    incomeAmount.innerText ='$' +  incomeCal;
+    expenseAmount.innerText ='$' +  expenseCal;
+    balanceText.innerText ='$' + (incomeCal - expenseCal);
 
     console.log("calc", incomeCal - expenseCal);
 }
@@ -214,5 +214,14 @@ function getItemFromLocalStorage() {
     expenseArr = JSON.parse(localStorage.getItem("expense")) || [];
     changeView();
     calculations();
+    console.log('User Lang', getLang());
+    console.log(Intl.DateTimeFormat().resolvedOptions().timeZone)
 }
 
+function getLang()
+{
+ if (navigator.languages != undefined) 
+ return navigator.languages[0]; 
+ else 
+ return navigator.language;
+}
