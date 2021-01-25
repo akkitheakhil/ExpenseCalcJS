@@ -11,12 +11,16 @@
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
+
+This is a simple Budget/Expense calculator build using HTML5, CSS and JavaScript. 
+It make use of Vanilla JavaScript to build this small app. 
+
+* Screenshots
+
 ![Desktop Image](https://i.ibb.co/RQk9JTD/Desktop-Screenshot-Dashboard.png "Desktop Dashboard View")
 ![Mobile Image](https://i.ibb.co/DLByHHv/Phone-Screenshot-Dashboar.png "Mobile Dashboard View")
 
 
-This is a simple Budget/Expense calculator build using HTML5, CSS and JavaScript. 
-It make use of Vanilla JavaScript to build this small app. 
 
 ### Built With
 
