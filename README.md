@@ -15,6 +15,8 @@
 This is a simple Budget/Expense calculator build using HTML5, CSS and JavaScript. 
 It make use of Vanilla JavaScript to build this small app. 
 
+Checkout the GH Page to play with the app. https://akkitheakhil.github.io/ExpenseCalcJS/
+
 * Screenshots
 
 ![Desktop](https://i.ibb.co/jT9SZkf/Desktop-Dashboard.png "Desktop Dashboard View")
