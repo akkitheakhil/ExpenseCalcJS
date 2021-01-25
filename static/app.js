@@ -73,7 +73,6 @@ function addNewItem(e) {
         const title = inputTitle.value;
         incomeArr.push({ amount, title });
         addItem(amount, title);
-
     } else if (currentTab === 'expense') {
         const amount = Number(inputAmt.value);
         const title = inputTitle.value;
@@ -81,7 +80,6 @@ function addNewItem(e) {
         expenseArr.push({ amount, title });
         addItem(amount, title);
     }
-
     calculations();
     updateLocalStorage();
 }
@@ -89,7 +87,6 @@ function addNewItem(e) {
 function changeTab(e) {
     e.preventDefault();
     currentTab = e.target.innerHTML.toLowerCase();
-
     if (currentTab === 'all') {
         bottomBar.classList.add("hide");
         bottomBar.classList.remove("show");
@@ -109,9 +106,7 @@ function changeTab(e) {
         expenseTab.classList.add("active");
         allTab.classList.remove("active");
     }
-
     changeView();
-
 }
 
 function changeView() {
@@ -155,7 +150,6 @@ function removeItem(e) {
         updateLocalStorage();
         calculations();
     }
-  
 }
 
 function editItem(e) {
@@ -167,18 +161,13 @@ function editItem(e) {
 
         if (currentTab === 'income') {
             let elementIndex = incomeArr.findIndex(item => itemToRemove === `${item.title} : $${item.amount}`);
-
             inputAmt.value = incomeArr[elementIndex].amount;
             inputTitle.value = incomeArr[elementIndex].title;
-
             incomeArr.splice(incomeArr.indexOf(elementIndex), 1);
-
         } else if (currentTab === 'expense') {
             let elementIndex = expenseArr.findIndex(item => itemToRemove === `${item.title} : $${item.amount}`);
-
             inputAmt.value = expenseArr[elementIndex].amount;
             inputTitle.value = expenseArr[elementIndex].title;
-
             expenseArr.splice(incomeArr.indexOf(elementIndex), 1);
         }
         listItemElem.remove();
@@ -192,7 +181,6 @@ function calculations() {
     if (incomeArr.length > 0) {
         incomeCal = incomeArr.map(item => item.amount).reduce((prev, next) => prev + next);
     }
-
     if (expenseArr.length > 0) {
         expenseCal = expenseArr.map(item => item.amount).reduce((prev, next) => prev + next);
     }
@@ -200,8 +188,6 @@ function calculations() {
     incomeAmount.innerText ='$' +  incomeCal;
     expenseAmount.innerText ='$' +  expenseCal;
     balanceText.innerText ='$' + (incomeCal - expenseCal);
-
-    console.log("calc", incomeCal - expenseCal);
 }
 
 function updateLocalStorage() {
@@ -214,14 +200,4 @@ function getItemFromLocalStorage() {
     expenseArr = JSON.parse(localStorage.getItem("expense")) || [];
     changeView();
     calculations();
-    console.log('User Lang', getLang());
-    console.log(Intl.DateTimeFormat().resolvedOptions().timeZone)
-}
-
-function getLang()
-{
- if (navigator.languages != undefined) 
- return navigator.languages[0]; 
- else 
- return navigator.language;
 }
